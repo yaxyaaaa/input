@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: antiquewhite;
+            
+        }
+        .container{
+            display: flex;
+            height: 100vh;
+            
+            
+            justify-content: center;
+        }
+        .card{
+            background-color: rgb(255, 255, 255);
+            height: fit-content;
+            padding: 20px;
+            margin-top: 10px;
+            text-align: center;
+            width: 500px;
+            border-radius: 10px;
+            color: rgb(0, 0, 0);
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+            
+        }
+        #text{
+            font-size: 30px;
+            border: 2px solid green; 
+            border-radius: 5px;
+        }
+        .add{
+            font-size: 30px;
+            background-color: green;
+            border-radius: 10px;
+            cursor: pointer;
+            color: aliceblue;
+        }
+        
+        .content{
+            background-color: antiquewhite;
+            margin: 8px;
+            margin-left: 20px;
+            border-radius: 10px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            width: 430px;
+            padding: 10px;
+            text-transform: uppercase;
+            display: none;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        <h1>MY TODO-LIST</h1>
+        <div class="below">
+            <input type="text" name="text" id="text" placeholder="Add new Task.....">
+            <button class="add">Add</button>
+        </div>
+
+        
+        
+
+    </div>
+    </div>
+
+    <script>
+        const content= document.querySelector('.content');
+        const btn=document.querySelector('.add');
+        const input = document.querySelector('#text');
+        const card=document.querySelector('.card');
+        btn.addEventListener('click',function(){
+                const input_value= input.value;
+            
+            
+        
+        //
+                const div = document.createElement('div');
+                div.setAttribute('class','content');
+                const h3=document.createElement('h3');
+                h3.textContent=input_value;
+                div.appendChild(h3);
+                card.appendChild(div);
+                div.style.display='block';
+                })
+    </script>
+    
+</body>
+</html>
